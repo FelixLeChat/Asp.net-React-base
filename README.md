@@ -1,16 +1,21 @@
 # Asp.net-React-base
 
-Asp.Net project that serve a React based front-end with compiled sass stylesheet.
+Asp.Net project that serve a React based front-end with compiled sass stylesheet, based on [ReactJS.Net](http://reactjs.net/)
 
 This solution contains 2 projects
 * API (with swagger and websocket configs) (.Net framework 4.6)
-* WEB (.Net framework 4.5.2)
+* WEB (.Net framework 4.6)
 
 #Installation
 
+### Prerequisites
+* Node.js v6 or newer
+* [visual studio 2015](https://beta.visualstudio.com/downloads/)
+*[Gulp Task Runner](https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708)
+
 1. Pull Repo
-2. Install [Gulp Task Runner](https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708)
-3. Load project (Base.sln)
+2. Load project (Base.sln)
+3. Have nuget package restore enabled
 4. Start project (Base.Web)
 
 ## Included Graphical Libraries
