@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\JavaScriptEngineSwitcher.V8.1.5.2\build\JavaScriptEngineSwitcher.V8.props" Condition="Exists('..\packages\JavaScriptEngineSwitcher.V8.1.5.2\build\JavaScriptEngineSwitcher.V8.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{304ECE55-EA44-4E47-AD10-EB313DD9EC92}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Base.Web</RootNamespace>
+    <AssemblyName>Base.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(TargetFrameworkVersion)' == 'v3.5' Or '$(TargetFrameworkVersion)' == 'v4.0' ">
+      <ItemGroup>
+        <Reference Include="AWSSDK.Core, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net35\AWSSDK.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="AWSSDK.EC2, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net35\AWSSDK.EC2.dll</HintPath>
+        </Reference>
+        <Reference Include="AWSSDK.S3, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net35\AWSSDK.S3.dll</HintPath>
+        </Reference>
+        <Reference Include="AWSSDK.SimpleDB, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net35\AWSSDK.SimpleDB.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="AWSSDK.Core, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="AWSSDK.EC2, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.EC2.dll</HintPath>
+        </Reference>
+        <Reference Include="AWSSDK.S3, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.S3.dll</HintPath>
+        </Reference>
+        <Reference Include="AWSSDK.SimpleDB, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.SimpleDB.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClearScript, Version=5.4.5.0, Culture=neutral, PublicKeyToken=935d0c957da47c73, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.1.5.2\lib\net40\ClearScript.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.Core.1.5.0\lib\net40\JavaScriptEngineSwitcher.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Msie, Version=1.5.0.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.Msie.1.5.0\lib\net40\JavaScriptEngineSwitcher.Msie.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.V8, Version=1.5.0.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.1.5.2\lib\net40\JavaScriptEngineSwitcher.V8.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JSPool, Version=0.4.0.0, Culture=neutral, PublicKeyToken=2fc7775f73072640, processorArchitecture=MSIL">
+      <HintPath>..\packages\JSPool.0.4.1\lib\net40-Client\JSPool.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MsieJavaScriptEngine, Version=1.7.0.0, Culture=neutral, PublicKeyToken=a3a2846a37ac0d3e, processorArchitecture=MSIL">
+      <HintPath>..\packages\MsieJavaScriptEngine.1.7.0\lib\net40\MsieJavaScriptEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="React.Core, Version=2.5.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.Core.2.5.0\lib\net40\React.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="React.Web, Version=2.5.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.Web.2.5.0\lib\net40\React.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="VroomJs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.Core.2.5.0\lib\net40\VroomJs.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\js\Bundle\external-bundle.min.js" />
+    <Content Include="Content\js\External\Kube\alert.js" />
+    <Content Include="Content\js\External\Kube\animation.js" />
+    <Content Include="Content\js\External\Kube\collapse.js" />
+    <Content Include="Content\js\External\Kube\dropdown.js" />
+    <Content Include="Content\js\External\Kube\message.js" />
+    <Content Include="Content\js\External\Kube\modal.js" />
+    <Content Include="Content\js\External\Kube\offcanvas.js" />
+    <Content Include="Content\js\External\Kube\sticky.js" />
+    <Content Include="Content\js\External\Kube\tabs.js" />
+    <Content Include="Content\js\External\Kube\toggleme.js" />
+    <Content Include="Content\js\External\Kube\_app.js" />
+    <Content Include="Content\js\External\Kube\_observer.js" />
+    <Content Include="Content\js\External\Jquery\jquery-3.1.0.js" />
+    <Content Include="Content\js\External\Semantic-UI\accordion.js" />
+    <Content Include="Content\js\External\Semantic-UI\api.js" />
+    <Content Include="Content\js\External\Semantic-UI\checkbox.js" />
+    <Content Include="Content\js\External\Semantic-UI\colorize.js" />
+    <Content Include="Content\js\External\Semantic-UI\dimmer.js" />
+    <Content Include="Content\js\External\Semantic-UI\dropdown.js" />
+    <Content Include="Content\js\External\Semantic-UI\embed.js" />
+    <Content Include="Content\js\External\Semantic-UI\form.js" />
+    <Content Include="Content\js\External\Semantic-UI\modal.js" />
+    <Content Include="Content\js\External\Semantic-UI\nag.js" />
+    <Content Include="Content\js\External\Semantic-UI\popup.js" />
+    <Content Include="Content\js\External\Semantic-UI\progress.js" />
+    <Content Include="Content\js\External\Semantic-UI\rating.js" />
+    <Content Include="Content\js\External\Semantic-UI\search.js" />
+    <Content Include="Content\js\External\Semantic-UI\shape.js" />
+    <Content Include="Content\js\External\Semantic-UI\sidebar.js" />
+    <Content Include="Content\js\External\Semantic-UI\site.js" />
+    <Content Include="Content\js\External\Semantic-UI\state.js" />
+    <Content Include="Content\js\External\Semantic-UI\sticky.js" />
+    <Content Include="Content\js\External\Semantic-UI\tab.js" />
+    <Content Include="Content\js\External\Semantic-UI\transition.js" />
+    <Content Include="Content\js\External\Semantic-UI\video.js" />
+    <Content Include="Content\js\External\Semantic-UI\visibility.js" />
+    <Content Include="Content\js\External\Semantic-UI\visit.js" />
+    <Content Include="Content\js\External\Underscore\underscore.js" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\accordion.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\ad.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\breadcrumb.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\button.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\card.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\checkbox.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\comment.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\container.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\dimmer.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\divider.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\dropdown.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\embed.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\feed.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\flag.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\form.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\grid.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\header.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\icon.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\image.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\input.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\item.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\label.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\list.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\loader.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\menu.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\message.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\modal.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\nag.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\popup.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\progress.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\rail.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\rating.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\reset.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\reveal.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\search.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\segment.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\shape.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\sidebar.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\site.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\statistic.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\step.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\sticky.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\tab.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\table.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\transition.css" />
+    <Content Include="Content\scss\External\Semantic-UI\_css\video.css" />
+    <Content Include="Content\scss\main.css" />
+    <Content Include="Content\scss\main.min.css" />
+    <Content Include="Content\js\External\Bootstrap\bootstrap.js" />
+    <Content Include="Content\js\External\Modernizr\modernizr-2.6.2.js" />
+    <Content Include="Global.asax" />
+    <Content Include="gulpfile.js" />
+    <Content Include="Scripts\Gulp\bundling.external.script.js" />
+    <Content Include="Scripts\Gulp\bundling.jsx.js" />
+    <Content Include="Scripts\Gulp\bundling.sass.js" />
+    <Content Include="Scripts\Gulp\lint.js" />
+    <Content Include="Scripts\Gulp\watch.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\ReactConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controller\ApplicationController.cs" />
+    <Compile Include="Controller\Localized\LocalizedController.cs" />
+    <Compile Include="Controller\Localized\LocalizedRouteHandler.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\font\" />
+    <Folder Include="Content\img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Views\web.config" />
+    <Content Include="package.json" />
+    <Content Include="Content\scss\main.scss" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Application\ApplicationIndex.cshtml" />
+    <Content Include="Content\scss\App\Components\Content\_content.scss" />
+    <Content Include="Content\jsx\Components\todo.component.jsx" />
+    <Content Include="Content\jsx\Bundle\react-components.min.jsx" />
+    <Content Include="Content\scss\App\Mixin\_exemple.scss" />
+    <None Include="Content\scss\App\Settings\_colors.scss" />
+    <Content Include="Content\scss\App\_mixins.scss" />
+    <Content Include="Content\scss\External\Kube\kube.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_alerts.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_breadcrumb.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_buttons.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_dropdown.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_forms.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_grid.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_labels.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_message.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_modal.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_pagination.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_print.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_restart.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_tables.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_tabs.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_typography.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\components\_utility.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\mixins\_alerts.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\mixins\_base.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\mixins\_buttons.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\mixins\_flex.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\mixins\_gradients.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\mixins\_grid.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\mixins\_labels.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\_animation.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\_components.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\_mixins.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\_theming.scss" />
+    <Content Include="Content\scss\External\Kube\_scss\_variables.scss" />
+    <Content Include="Content\scss\External\FontAwesome\font-awesome.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_animated.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_bordered-pulled.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_core.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_fixed-width.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_icons.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_larger.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_list.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_mixins.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_path.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_rotated-flipped.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_screen-reader.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_stacked.scss" />
+    <Content Include="Content\scss\External\FontAwesome\_scss\_variables.scss" />
+    <Content Include="Content\scss\App\Settings\_fonts.scss" />
+    <Content Include="Content\scss\External\Bootstrap\_bootstrap.scss" />
+    <Content Include="Content\scss\External\Semantic-UI\semantic-ui.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\jasny\_navmenu.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\jasny\_offcanvas.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\jasny\_variables.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_alerts.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_center-block.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_forms.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_grid.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_image.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_labels.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_opacity.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_panels.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_resize.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_size.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_alerts.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_badges.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_breadcrumbs.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_button-groups.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_buttons.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_carousel.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_close.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_code.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_component-animations.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_dropdowns.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_forms.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_glyphicons.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_grid.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_input-groups.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_jumbotron.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_labels.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_list-group.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_media.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_mixins.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_modals.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_navbar.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_navs.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_normalize.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_pager.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_pagination.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_panels.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_popovers.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_print.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_progress-bars.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_responsive-embed.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_responsive-utilities.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_scaffolding.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_tables.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_theme.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_thumbnails.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_tooltip.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_type.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_utilities.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_variables.scss" />
+    <Content Include="Content\scss\External\Bootstrap\bootstrap\_wells.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54368</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54368/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\JavaScriptEngineSwitcher.V8.1.5.2\build\JavaScriptEngineSwitcher.V8.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\JavaScriptEngineSwitcher.V8.1.5.2\build\JavaScriptEngineSwitcher.V8.props'))" />
+  </Target>
+</Project>

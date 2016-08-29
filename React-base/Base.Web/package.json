@@ -1,0 +1,37 @@
+{
+  "name": "react-base",
+  "version": "1.0.0",
+  "description": "React - base (web project)",
+  "main": "index.js",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-batch": "^1.0.5",
+    "gulp-clean-css": "^2.0.7",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "1.0.1",
+    "gulp-sass": "2.1.0",
+    "gulp-sass-lint": "^1.1.1",
+    "gulp-sourcemaps": "1.6.0",
+    "gulp-svg-sprite": "^1.3.3",
+    "gulp-typescript": "^2.13.4",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "3.0.7",
+    "gulp-watch": "^4.3.5",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.2.0",
+    "sass-lint": "^1.7.0",
+    "gulp-react-bundle": "^0.1.11",
+    "gulp-react": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
+    "preinstall": "npm install -g gulp",
+    "prestart": "npm run gulp"
+  },
+  "author": "",
+  "license": "ISC"
+}

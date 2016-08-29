@@ -1,0 +1,53 @@
+﻿//                           ITCSS
+//
+// Declare stylesheet by lowest to highest specificity
+// In each section declare external dependencies first for easy override 
+// https://speakerdeck.com/dafed/managing-css-projects-with-itcss
+
+
+// ----------------------------------------------------------- /
+//                           SETTINGS
+// Global variables, site-wide settings, config switches, etc.
+// ----------------------------------------------------------- /
+
+@import "App/Settings/_colors";
+@import "App/Settings/_fonts";
+
+// ----------------------------------------------------------- /
+//                           TOOLS 
+// Site-wide mixins and functions
+// ----------------------------------------------------------- /
+
+@import "App/_mixins";
+
+// ----------------------------------------------------------- /
+//                           GENERIC 
+// Low-specificity, far-reaching rulesets (e.g. resets).
+// ----------------------------------------------------------- /
+
+// --------------------------------------------------------------- /
+//                           BASE 
+// HTML tag elements (e.g. a {}, p{}, blockquote {}, address {}).
+// --------------------------------------------------------------- /
+
+@import "External/Kube/kube";
+@import "External/FontAwesome/font-awesome";
+@import "External/Bootstrap/_bootstrap";
+@import "External/Semantic-UI/semantic-ui";
+
+// --------------------------------------------------------------------------------- /
+//                           OBJECTS
+// Objects, abstractions, and design patterns, NO branding (e.g. .center {}, grid {}).
+// --------------------------------------------------------------------------------- /
+
+// ------------------------------------------------------------------- /
+//                           COMPONENTS 
+// Discrete, complete chunks of UI (e.g. .header, .tiles .carousel {}).
+// ------------------------------------------------------------------- /
+
+@import "App/Components/Content/_content";
+
+// ----------------------------------------------------------------------------------------- /
+//                           TRUMPS 
+// High-specificity, very explicit selectors. Overrides and helper classes (e.g. .hidden {}).
+// ----------------------------------------------------------------------------------------- /
