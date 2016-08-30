@@ -11,7 +11,8 @@ This solution contains 2 projects
 ### Prerequisites
 * Node.js v6 or newer
 * [visual studio 2015](https://beta.visualstudio.com/downloads/)
-*[Gulp Task Runner](https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708)
+* [Gulp Task Runner](https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708)
+
 
 1. Pull Repo
 2. Load project (Base.sln)
