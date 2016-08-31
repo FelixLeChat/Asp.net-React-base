@@ -35,6 +35,9 @@ This solution contains 2 projects
 * [Modernizr](https://github.com/Modernizr/Modernizr)
 * [UnderscoreJS](https://github.com/jashkenas/underscore)
 
+## Gulp task
+For more information on the gulp task, check the [wiki](https://github.com/FelixLeChat/Asp.net-React-base/wiki/Gulp-Task)
+
 ### Hosting Compatibility
 
 I've use this base project to deploy to AWS with ElasticBeanstalk with the [VisualStudio Plugin](https://aws.amazon.com/visualstudio/)
