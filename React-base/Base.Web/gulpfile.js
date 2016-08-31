@@ -9,7 +9,7 @@ var requireDir = require("require-dir");
 requireDir("./Scripts/gulp", { recurse: true });
 
 // "app-scripts-bundle",
-var bundle = ["external-scripts-bundle", "app-sass-bundle-min"];
+var bundle = ["external-scripts-bundle", "app-sass-bundle-min", "react-components-bundle"];
 
 gulp.task("dev", function (callback) {
     sequence("lint-dev", bundle, callback);

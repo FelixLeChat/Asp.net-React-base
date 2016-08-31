@@ -10,7 +10,7 @@ var config = {
 }
 
 gulp.task("react-components-bundle", [], function () {
-    return compileAndBundle(["Content/jsx/Components/**/*.jsx"], "react-components.min.jsx");
+    return compileAndBundle(["Content/jsx/Components/**/*.jsx"], "react-components.min.js");
 });
 
 var compileAndBundle = function(source, filename) {
