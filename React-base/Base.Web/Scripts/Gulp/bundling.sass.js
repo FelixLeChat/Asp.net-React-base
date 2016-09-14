@@ -8,7 +8,6 @@ var concat = require("gulp-concat");
 var plumber = require("gulp-plumber");
 var minify = require("gulp-minify-css");
 var sourcemaps = require("gulp-sourcemaps");
-var cachebuster = require("gulp-cache-bust");
 
 // Source and destination for less compile
 var config = {
